@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thánh Lễ Truyền Chức Linh Mục Giáo Phận Xuân Lộc - Giáo Xứ Hồng Ân</title>
+    
+    <!-- Gọi file thiết kế dùng chung nằm ở thư mục ngoài (dùng dấu ../ để đi lùi ra ngoài) -->
+    <link rel="stylesheet" href="../style.css"> 
+    
+    
+    <style>
+        /* === CSS BỔ SUNG RIÊNG CHO KHUNG SOẠN THẢO/ĐỌC BÀI VIẾT === */
+        body {
+            background-color: #f4f7f6; /* Nền xám nhạt dịu mắt khi đọc chữ */
+        }
+
+        .sh-khung-doc-bai-viet {
+            max-width: 900px;         /* Giới hạn độ rộng vừa phải giúp mắt người đọc không bị mỏi */
+            margin: 40px auto;        /* Căn giữa toàn bộ bài viết và tạo khoảng cách trên dưới */
+            background-color: #ffffff;/* Khung nền trắng chứa nội dung như trang sách */
+            padding: 40px 30px;
+            border-radius: 8px;       /* Bo tròn nhẹ góc hộp */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Đổ bóng nhẹ giúp khối nổi bật */
+            box-sizing: border-box;
+        }
+
+        /* 1. ĐỊNH DẠNG KHU VỰC TIÊU ĐỀ */
+        .bv-tieu-de {
+            font-size: 28px;
+            font-weight: bold;
+            color: #046c04;           /* Màu xanh lá đậm Giáo xứ */
+            line-height: 1.4;
+            margin-bottom: 12px;
+            text-align: left;
+        }
+
+        /* Thanh thông tin ngày đăng, người viết */
+        .bv-thong-tin-phu {
+            font-size: 13px;
+            color: #777777;
+            border-bottom: 1px dashed #dddddd; /* Đường gạch đứt phân cách */
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            gap: 15px;
+        }
+
+        /* 2. ĐỊNH DẠNG RUỘT NỘI DUNG VĂN BẢN (Chuẩn như Microsoft Word) */
+        .bv-noi-dung-goc {
+            color: #222222;
+            font-size: 16px;          /* Cỡ chữ chuẩn quốc tế để đọc tin tức trên màn hình */
+        }
+
+        .bv-noi-dung-goc p {
+            text-align: justify;       /* CĂN ĐỀU 2 BÊN lề thẳng tắp */
+            line-height: 1.8;          /* GIÃN DÒNG thoáng đãng, dễ đọc */
+            margin-bottom: 18px;       /* Khoảng cách khi xuống dòng giữa các đoạn văn */
+            text-indent: 30px;         /* THỤT ĐẦU DÒNG tự động cho mỗi đoạn */
+        }
+
+        /* Định dạng các tiêu đề phụ 1., 2. bên trong bài viết */
+        .bv-noi-dung-goc h2 {
+            font-size: 20px;
+            color: #17720b;
+            margin: 30px 0 15px 0;
+            border-left: 4px solid #17720b; /* Vạch đứng màu xanh bên mép trái tiêu đề */
+            padding-left: 10px;
+        }
+
+        /* Định dạng hình ảnh minh họa chèn ở giữa bài viết */
+        .bv-noi-dung-goc .hop-chua-anh {
+            text-align: center;
+            margin: 25px 0;
+            text-indent: 0;            /* Hủy thụt đầu dòng riêng cho khối ảnh */
+        }
+
+        .bv-noi-dung-goc img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        /* Chữ chú thích nhỏ xíu nằm dưới tấm ảnh */
+        .bv-noi-dung-goc .chu-thich-anh {
+            font-size: 13px;
+            color: #555555;
+            font-style: italic;
+            margin-top: 6px;
+            display: block;
+        }
+
+        /* Nút quay lại trang tin tức */
+        .btn-quay-lai {
+            display: inline-block;
+            margin-top: 30px;
+            color: #17720b;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .btn-quay-lai:hover { text-decoration: underline; }
+
+        /* Tối ưu hiển thị co giãn trên màn hình điện thoại di động */
+        @media (max-width: 768px) {
+            .sh-khung-doc-bai-viet {
+                margin: 15px 10px;
+                padding: 25px 15px;
+            }
+            .bv-tieu-de { font-size: 22px; }
+            .bv-noi-dung-goc { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- =========================================================
+         1. THANH MENU CHÍNH (Giữ nguyên y hệt như trang chủ của bạn)
+         ========================================================= -->
+    <!-- Bạn nhớ copy khối <nav class="navbar">...</nav> thật của bạn dán vào đây -->
+    <nav class="navbar" style="background:#0f5132; color:#fff; padding:15px; text-align:center;">
+        <strong>[ KHÔNG GIAN THANH MENU CHÍNH DÙNG CHUNG CỦA BẠN ]</strong>
+    </nav>
+
+
+    <!-- =========================================================
+         2. KHUNG NỘI DUNG CHI TIẾT BÀI VIẾT BẮT ĐẦU TỪ ĐÂY
+         ========================================================= -->
+    <main class="sh-khung-doc-bai-viet">
+        
+        <!-- Tiêu đề lớn của bài viết -->
+        <h1 class="bv-tieu-de">Thánh Lễ Truyền Chức Linh Mục Giáo Phận Xuân Lộc Năm 2026</h1>
+        
+        <!-- Thanh thông tin ngày tháng phụ -->
+        <div class="bv-thong-tin-phu">
+            <span>📅 Ngày đăng: 10/09/2026</span>
+            <span>✍️ Tác giả: Ban Truyền Thông Giáo Xứ</span>
+        </div>
+
+        <!-- Ruột nội dung - Nơi bạn gõ chữ, chèn ảnh bài viết -->
+        <article class="bv-noi-dung-goc">
+            
+            <p>Trong niềm hân hoan tạ ơn Thiên Chúa, cộng đoàn dân Chúa Giáo phận Xuân Lộc nói chung và Giáo xứ Hồng Ân nói riêng đã long trọng hướng về ngày đại lễ cầu nguyện cho các tiến chức. Bầu không khí tại vương cung thánh đường diễn ra vô cùng trang nghiêm và sốt sắng với sự tham dự của đông đảo các linh mục đoàn và bà con giáo dân từ khắp nơi đổ về.</p>
+
+            <!-- Khối chèn hình ảnh minh họa số 1 -->
+            <div class="hop-chua-anh">
+                <!-- Đường dẫn ảnh đi lùi ra ngoài thư mục baivietgiaoxu rồi chui vào thư mục anh -->
+                <img src="../anh/17.jpg" alt="Thánh lễ truyền chức linh mục">
+                <span class="chu-thich-anh">Hình 1: Đoàn rước tiến chức tiến vào thánh đường trong lời ca nhập lễ.</span>
+            </div>
+
+            <h2>1. Nghi thức truyền chức trang trọng</h2>
+            
+            <p>Sau bài công bố Tin Mừng, nghi thức truyền chức linh mục chính thức được bắt đầu bằng việc tuyển chọn các ứng viên. Đức Giám mục chủ tế đã thẩm vấn các tiến chức về quyết tâm thực thi nhiệm vụ theo lệnh truyền của Đức Kitô trong sự vâng phục bề trên Giáo hội.</p>
+            
+            <p>Giây phút cảm động nhất là khi toàn thể cộng đoàn cùng quỳ gối hát Kinh Cầu Các Thánh, trong khi các tiến chức phủ phục trước bàn thờ. Đây là biểu tượng của sự khiêm hạ, phó thác hoàn toàn cuộc đời cho sứ vụ mục tử mà Thiên Chúa trao ban qua Giáo hội.</p>
+
+            <!-- Khối chèn hình ảnh minh họa số 2 -->
+            <div class="hop-chua-anh">
+                <img src="../anh/1.jpg" alt="Nghi thức đặt tay chúc lành">
+                <span class="chu-thich-anh">Hình 2: Đức Giám mục đặt tay chúc lành và ban hồng ân thánh hiến cho các Tân Linh mục.</span>
+            </div>
+
+            <h2>2. Lời nhắn nhủ gửi tới các Tân chức</h2>
+            
+            <p>Mở đầu bài chia sẻ, Đức Cha chủ tế đã ân cần nhắc nhở các Tân mục tử về căn tính của người linh mục là trở thành những người phục vụ đoàn cừu theo gương Chúa Giêsu. Linh mục không phải là một danh vị quyền lực, mà là một lời mời gọi dấn thân, đồng hành, sớt chia với những thăng trầm của đời sống giáo dân, đặc biệt là những hoàn cảnh khó khăn, cơ lỡ.</p>
+            
+            <p>Thánh lễ khép lại trong niềm vui vỡ òa của các gia đình ông bà cố cùng toàn thể cộng đoàn. Những bó hoa tươi thắm, những nụ cười rạng rỡ và những lời chúc mừng tốt đẹp nhất đã được gửi trao tới các Tân linh mục, mở ra một hành trình gieo hạt giống đức tin đầy hy vọng trên cánh đồng truyền giáo mới.</p>
+
+            <!-- Nút bấm quay ngược trở ra danh mục tin tức chính -->
+            <a href="../tintuc.html" class="btn-quay-lai">⬅ Quay lại danh mục Tin Tức</a>
+
+        </article>
+    </main>
+
+
+    <!-- =========================================================
+         3. KHỐI CHÂN TRANG FOOTER (Giữ nguyên y hệt như trang chủ của bạn)
+         ========================================================= -->
+    <!-- Bạn nhớ copy toàn bộ khối <div class="yvb-footer-spacer">...</div> thật dán vào đây -->
+    <footer style="background:#046c04; color:#fff; padding:20px; text-align:center; margin-top:50px;">
+        <p>© 2026 Giáo Xứ Hồng Ân - Được thiết kế bởi Ban Truyền Thông</p>
+    </footer>
+
+</body>
+</html>

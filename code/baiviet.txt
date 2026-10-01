@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài viết: Lễ Các Thánh tại Giáo Xứ</title>
+    <style>
+        /* Bạn copy phần CSS Thanh Menu chung của bạn vào đây để đồng bộ giao diện */
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding-top: 60px; background-color: #f4f7f6; }
+        .navbar { background-color: #2c3e50; position: fixed; top: 0; width: 100%; }
+        /* ... (Các đoạn CSS menu con bạn đã làm hôm qua) ... */
+        
+        .container { max-width: 800px; margin: 30px auto; padding: 30px; background: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+        .post-meta { color: #7f8c8d; font-size: 0.9rem; margin-bottom: 20px; }
+        .post-content img { max-width: 100%; height: auto; border-radius: 8px; margin: 15px 0; }
+    </style>
+</head>
+<body>
+    <!-- THANH MENU CHUNG (Copy nguyên bộ menu đa cấp của bạn vào đây) -->
+    <nav class="navbar">...</nav>
+
+    <!-- NỘI DUNG CHI TIẾT BÀI VIẾT -->
+    <div class="container">
+        <h1>27-09-2026. Chúa nhật 26 Thường niên. Năm A</h1>
+        <div class="post-meta">Đăng ngày: 27/09/2026 | Tác giả: Ban Truyền Thông</div>
+        
+        <div class="post-content">
+            <p>Đây là đoạn văn mở đầu của bài viết chi tiết...</p>
+ <div style="text-align: center; margin-bottom: 20px;">
+            <img src="anhchua.jpg" alt="Ảnh Giáo Họ" width="300" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        </div>
+            </div>
+            <p>Phúc Âm: Mt 21, 28-32
+"Nó hối hận và đi làm. Những người thu thuế và gái điếm sẽ vào nước Thiên Chúa trước các ông".
+Tin Mừng Chúa Giêsu Kitô theo Thánh Matthêu.
+Khi ấy, Chúa Giêsu phán cùng các thượng tế và các kỳ lão trong dân rằng: "Các ông nghĩ sao? Người kia có hai người con. Ông đến với đứa con thứ nhất và bảo: "Này con, hôm nay con hãy đi làm vườn nho cho cha!" Nó thưa lại rằng: "Con không đi". Nhưng sau nó hối hận và đi làm. Ông đến gặp đứa con thứ hai và cũng nói như vậy. Nó thưa lại rằng: "Thưa cha, vâng, con đi". Nhưng nó lại không đi. Ai trong hai người con đã làm theo ý cha mình?" Họ đáp: "Người con thứ nhất". Chúa Giêsu bảo họ: "Tôi bảo thật các ông, những người thu thuế và gái điếm sẽ vào nước Thiên Chúa trước các ông. Vì Gioan đã đến với các ông trong đường công chính, và các ông không tin ngài; nhưng những người thu thuế và gái điếm đã tin ngài. Còn các ông, sau khi xem thấy điều đó, các ông cũng không hối hận mà tin ngài".
+Ðó là lời Chúa.</p>
+        </div>
+    </div>
+</body>
+</html>
