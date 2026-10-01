@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Box Lời Chúa</title>
+<style>
+:root { 
+    --xanh: #115e07; 
+    --blue: #0f6204; 
+    --den: #ffffff; 
+    --xam: #ffffff; 
+    --bg: #046c04; 
+} 
+
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Arial,sans-serif; } 
+body { background: #ffffff; padding: 15px; } 
+
+.sh-khoi-bao-ve-he-thong {
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.t-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-end; 
+    border-bottom: 1px solid #db5d2b; 
+    margin-bottom: 15px; 
+    padding-bottom: 5px; 
+} 
+.t-title { 
+    font-size: 18px; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    color: #ff8c5e; 
+} 
+.t-tabs { display: flex; } 
+.t-btn { 
+    font-size: 16px; 
+    font-weight: bold; 
+    color: #f18305; 
+    cursor: pointer; 
+    padding: 0 12px 5px 12px; 
+    margin-left: 5px; 
+    border-bottom: 1px solid transparent; 
+    transition: all 0.2s; 
+} 
+.t-btn.active, 
+.t-btn:hover { 
+    color: #d80000; 
+  
+} 
+.box-flex { 
+    display: flex; 
+    width: 100%;
+    height: 520px; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    background: #fafafa; /*MÀU NỀN BOX LỚN*/ 
+    position: relative; 
+} 
+.col-left { 
+    width: 65%; 
+    padding: 30px; 
+    border-right: 2px solid #eee; 
+   /* ĐÃ XÓA dòng cursor: pointer ở đây */
+} 
+
+.img-wrap { 
+    width: 100%; 
+    height: 380px; 
+    overflow: hidden; 
+    border-radius: 6px; 
+    background: #ffffff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* THÊM DÒNG NÀY: Để rê chuột vào ảnh đại diện lớn hiện bàn tay click */
+} 
+
+.img-big { 
+    width: 100%;
+    height: 100%;
+    object-fit: fill; 
+    display: block; 
+    transition: opacity 0.2s; 
+} 
+.p-title { 
+    font-size: 18px; 
+    font-weight: bold; 
+    margin: 15px 0 8px 0; 
+    color: #0e7007; 
+    line-height: 1.4; 
+    text-align: left !important; 
+    cursor: pointer; /* THÊM DÒNG NÀY: Để rê chuột vào tiêu đề lớn hiện bàn tay click */
+    display: block; /* THÊM DÒNG NÀY: Giúp vùng click vừa vặn với chữ */
+    width: 100% !important; 
+} 
+.p-title:hover {
+    text-decoration: underline; /* THÊM KHỐI NÀY: Gạch chân tiêu đề khi rê chuột vào */
+    color: #4b9956 !important; /* THÊM KHỐI NÀY: Đổi màu tiêu đề khi rê chuột vào */
+}
+
+ 
+.p-desc { 
+    font-size: 14px; 
+    color: #000000; 
+    line-height: 1.5; 
+    text-align: left !important;
+    display: block !important; 
+} 
+
+.col-right { 
+    width: 35%; 
+    display: flex; 
+    flex-direction: column; 
+    background: #fFfFfa; 
+    position: relative; 
+    z-index: 1;
+    padding-top: 10px;
+     height: 500px;       /* Khống chế chiều cao bằng với khối ảnh lớn bên trái */
+    overflow-y: auto; 
+} 
+
+.row-news { 
+   display: flex; 
+   align-items: center; 
+   padding: 12px 15px; 
+   border-bottom: 1px solid #eee; 
+   cursor: pointer; 
+   border-left: 4px solid transparent; 
+   transition: all 0.2s;
+} 
+ 
+.row-news:last-child { border-bottom: none; } 
+
+.row-news:hover {
+    background: #f1fcf5;
+    border-left-color: #f1fcf5;
+}
+.row-news:hover .r-title {
+    color: #4b9956 !important; 
+}
+.row-news:hover .r-date {
+    color: #000000 !important;
+}
+
+.row-news.active { 
+    background: #e4f1e9; 
+    border-left-color: #115e07;
+
+    }
+.row-news.active .r-title {
+    color: #115e07 !important; 
+    
+}
+
+.thumb-wrap { 
+    width: 80px; 
+    min-width: 80px; 
+    height: 55px; 
+    margin-right: 12px; 
+    overflow: hidden; 
+    border-radius: 4px; 
+    border: 1px solid #d7e3dd;
+    background: #ffffff; 
+}
+ 
+.img-thumb { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    display: block; 
+} 
+
+.txt-wrap { overflow: hidden; } 
+
+.r-title { 
+    font-size: 14px; 
+    font-weight: 600; 
+    color: #000000 !important; 
+    line-height: 1.4; 
+    text-align: left; 
+} 
+
+.r-date { 
+    font-size: 11px; 
+    color: #000000 !important; 
+    margin-top: 4px; 
+    text-align: left; 
+} 
+</style>
+</head>
+<body>
+
+   <!-- ================================================================= -->
+    <!-- BẮT ĐẦU DÁN TỪ ĐOẠN KHỐI BOX VIDEO TIỆN ÍCH NÀY TRỞ XUỐNG HẾT FILE -->
+    <!-- ================================================================= -->
+    <div class="sh-khoi-bao-ve-he-thong">
+        <div class="t-header">
+            <h2 class="t-title">Lới Chúa</h2>
+            <div class="t-tabs">
+                <div class="t-btn active" id="tab1">Lời Chúa mỗi ngày</div>
+                <div class="t-btn" id="tab2">Suy Niệm Lời Chúa</div>
+
+            </div>
+        </div>  
+               <div class="box-flex">
+            <!-- Khối lớn bên trái -->
+            <div class="col-left">
+                <div class="img-wrap" onclick="goToLink()"><img src="" class="img-big" id="p-img" alt="Hình lớn"></div>
+                <h3 class="p-title" id="p-title" onclick="goToLink()">Đang tải...</h3>
+                <p class="p-desc" id="p-desc"></p>
+            </div>
+            
+            <!-- ĐẢM BẢO THẺ ID="LIST-ZONE" NẰM ĐÚNG Ở ĐÂY -->
+            <div class="col-right" id="list-zone"></div>
+        </div>
+    </div>
+
+
+<script>
+// MẢNG DỮ LIỆU BÀI VIẾT (ĐOẠN XỬ LÝ CLICK CHUẨN XỊN)
+var DATA_1 = [
+    { title: "29-09-2026. Thứ Ba sau Chúa nhật 26 Thường niên. Năm A", 
+    img: "https://giaoxuhongan.com/files/assets/hinh_loi_chua/thien_than.jpg", 
+    url: "../loichuamoingay/loi_chua_thu_ba_tuan_26.html", 
+    date: "29/09/2026" },
+
+    { title: "Thánh lễ Tạ ơn Tân linh mục - tại Giáo xứ Hồng Ân - 14/8/2026", 
+    img: "https://ibb.co", 
+    url: "https://giaoxuhongan.com", 
+    date: "30/08/2026" },
+
+    { title: "Thánh Lễ Tạ Ơn Của 2 Tân Linh Mục tại Gx. Gia Vinh", 
+    img: "https://ibb.co", 
+    url: "https://giaoxuhongan.com", 
+    date: "30/08/2026" },
+
+    { title: "Thánh Lễ Truyền Chức Linh Mục Giáo Phận Xuân Lộc Năm 2026", 
+    img: "https://ibb.co", 
+    url: "https://giaoxuhongan.com", 
+    date: "10/09/2026" },
+
+    { title: "Thánh lễ Tạ ơn Tân linh mục - tại Giáo xứ Hồng Ân - 14/8/2026", 
+    img: "https://ibb.co", 
+    url: "https://giaoxuhongan.com", 
+    date: "30/08/2026" },
+
+    { title: "Thánh Lễ Tạ Ơn Của 2 Tân Linh Mục tại Gx. Gia Vinh", 
+    img: "https://ibb.co", 
+    url: "https://giaoxuhongan.com", 
+    date: "30/08/2026" },
+    { title: "Thánh Lễ Truyền Chức Linh Mục Giáo Phận Xuân Lộc Năm 2026", 
+    img: "https://ibb.co", 
+    url: "https://giaoxuhongan.com", 
+    date: "10/09/2026" },
+
+    { title: "Thánh lễ Tạ ơn Tân linh mục - tại Giáo xứ Hồng Ân - 14/8/2026", 
+    img: "https://ibb.co", 
+    url: "https://giaoxuhongan.com", 
+    date: "30/08/2026" },
+
+    { title: "Thánh Lễ Tạ Ơn Của 2 Tân Linh Mục tại Gx. Gia Vinh", 
+    img: "https://ibb.co", 
+    url: "https://giaoxuhongan.com", 
+    date: "30/08/2026" }
+]; 
+var DATA_2 = [
+    { title: "Suy Niệm 14 Chặng Đàng Thánh Giá | Năm Thánh 2025", 
+    img: "https://ibb.co", 
+    url: "https://giaoxuhongan.com", 
+    date: "23/04/2025" },
+
+    { title: "Giáo xứ Hồng Ân: 14 chặng đàng Thánh giá - 07/04/2023",
+    img: "https://ibb.co", 
+    url: "https://giaoxuhongan.com", 
+    date: "07/04/2023" },
+
+    { title: "Thánh Lễ Truyền Chức Linh Mục Giáo Phận Xuân Lộc Năm 2026", 
+    img: "https://ibb.co", 
+    url: "https://giaoxuhongan.com", 
+    date: "10/09/2026" },
+
+    { title: "Thánh lễ Tạ ơn Tân linh mục - tại Giáo xứ Hồng Ân - 14/8/2026", 
+    img: "https://ibb.co", 
+    url: "https://giaoxuhongan.com",
+     date: "30/08/2026" },
+
+    { title: "Thánh Lễ Tạ Ơn Của 2 Tân Linh Mục tại Gx. Gia Vinh", 
+    img: "https://ibb.co", 
+    url: "https://giaoxuhongan.com", 
+    date: "30/08/2026" },
+
+    { title: "Thánh Lễ Truyền Chức Linh Mục Giáo Phận Xuân Lộc Năm 2026", 
+    img: "https://ibb.co", 
+    url: "https://giaoxuhongan.com", 
+    date: "10/09/2026" },
+
+    { title: "Thánh lễ Tạ ơn Tân linh mục - tại Giáo xứ Hồng Ân - 14/8/2026", 
+    img: "https://ibb.co", 
+    url: "https://giaoxuhongan.com", 
+    date: "30/08/2026" },
+
+    { title: "Thánh Lễ Tạ Ơn Của 2 Tân Linh Mục tại Gx. Gia Vinh", 
+    img: "https://ibb.co", 
+    url: "https://giaoxuhongan.com", 
+    date: "30/08/2026" },
+
+    { title: "Thánh Lễ Truyền Chức Linh Mục Giáo Phận Xuân Lộc Năm 2026", 
+    img: "https://ibb.co", 
+    url: "https://giaoxuhongan.com", 
+    date: "10/09/2026" },
+
+    { title: "Thánh lễ Tạ ơn Tân linh mục - tại Giáo xứ Hồng Ân - 14/8/2026", 
+    img: "https://ibb.co", 
+    url: "https://giaoxuhongan.com", 
+    date: "30/08/2026" },
+
+    { title: "Thánh Lễ Tạ Ơn Của 2 Tân Linh Mục tại Gx. Gia Vinh", 
+    img: "https://ibb.co", 
+    url: "https://giaoxuhongan.com", 
+    date: "30/08/2026" }
+]; 
+
+
+var currentUrl = ""; 
+
+// 1. HÀM TẠO DANH SÁCH BÀI VIẾT (XÓA BỎ CHỮ ACTIVE TỰ ĐỘNG TRONG VÒNG LẶP)
+function render(data) {
+    var zone = document.getElementById("list-zone"); 
+    var html = ""; 
+    window.activeData = data; 
+    
+    for (var i = 0; i < data.length; i++) {
+        // Mặc định tất cả dòng tin ban đầu đều là chữ thường, không tự ý chèn chữ active nữa
+        var imgHtml = (data[i].img && !data[i].img.includes("ibb.co")) ? '<img src="' + data[i].img + '" class="img-thumb">' : '';
+        html += '<div class="row-news" onclick="changeNews(' + i + ', this)">' +
+                '<div class="thumb-wrap">' + imgHtml + '</div>' +
+                '<div class="txt-wrap"><div class="r-title">' + data[i].title + '</div><div class="r-date">📅 ' + data[i].date + '</div></div>' +
+                '</div>';
+    }
+    zone.innerHTML = html;
+    
+    // Nạp nội dung bài đầu tiên lên ô bên trái một cách an toàn khi khởi động
+    if (data.length > 0) { 
+        var rows = zone.getElementsByClassName("row-news");
+        if (rows.length > 0) {
+            rows[0].classList.add("active"); // Chỉ tô màu xanh cho dòng 1 chứ không kích hoạt click
+            napDuLieuXemTruoc(0); // Nạp chữ và ảnh sang trái
+        }
+    }
+}
+
+// 2. HÀM XỬ LÝ KHI NGƯỜI DÙNG TỰ TAY CLICK CHUỘT LÊN DÒNG TIN
+function changeNews(idx, element) {
+    // Nếu dòng này ĐÃ ĐANG ĐƯỢC CHỌN (có chữ active) -> Người dùng click lần 2 -> CHUYỂN TRANG
+    if (element && element.classList.contains("active")) {
+        goToLink();
+        return;
+    }
+
+    // Nếu click dòng khác -> Xóa active cũ, tô màu xanh active cho dòng mới
+    var rows = document.getElementsByClassName("row-news");
+    for (var j = 0; j < rows.length; j++) { rows[j].classList.remove("active"); }
+    if (element) element.classList.add("active");
+    
+    // Nạp nội dung sang ô xem trước bên trái
+    napDuLieuXemTruoc(idx);
+}
+
+// HÀM PHỤ HỖ TRỢ NẠP CHỮ VÀ ẢNH SANG Ô TRÁI
+function napDuLieuXemTruoc(idx) {
+    var currentData = window.activeData[idx];
+    document.getElementById("p-title").innerHTML = currentData.title;
+    document.getElementById("p-desc").innerHTML = "📅 " + currentData.date;
+    
+    var pImg = document.getElementById("p-img");
+    if (currentData.img && !currentData.img.includes("ibb.co")) { 
+        pImg.src = currentData.img; 
+        pImg.style.display = "block"; 
+    } else { 
+        pImg.src = "";
+        pImg.style.display = "none"; 
+    }
+    currentUrl = currentData.url;
+}
+
+function goToLink() { if (currentUrl && currentUrl !== "#") { window.parent.location.href = currentUrl; } }
+
+// KHỞI ĐỘNG MẶC ĐỊNH
+render(DATA_1);
+
+document.getElementById("tab1").onclick = function() { selectTab("tab1", DATA_1); };
+document.getElementById("tab2").onclick = function() { selectTab("tab2", DATA_2); };
+
+function selectTab(tabId, data) {
+    var tabs = document.getElementsByClassName("t-btn");
+    for (var i = 0; i < tabs.length; i++) { tabs[i].classList.remove("active"); }
+    document.getElementById(tabId).classList.add("active"); 
+    render(data); // Tải danh sách mới của tab đó
+}
+
+</script>
+</body>
+</html>
+
