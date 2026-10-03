@@ -1,0 +1,284 @@
+<!------------------------STYLE BÀI VIẾT BẮT ĐẦU TẠI ĐÂY----------------------------------------->
+        /* === CSS BỔ SUNG RIÊNG CHO KHUNG SOẠN THẢO/ĐỌC BÀI VIẾT === */
+        body {
+            background-color: #f4f7f6; /* Nền xám nhạt dịu mắt khi đọc chữ */
+        }
+
+        .sh-khung-doc-bai-viet {
+            max-width: 900px;         /* Giới hạn độ rộng vừa phải giúp mắt người đọc không bị mỏi */
+            margin: 40px auto;        /* Căn giữa toàn bộ bài viết và tạo khoảng cách trên dưới */
+            background-color: #ffffff;/* Khung nền trắng chứa nội dung như trang sách */
+            padding: 40px 30px;
+            border-radius: 8px;       /* Bo tròn nhẹ góc hộp */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Đổ bóng nhẹ giúp khối nổi bật */
+            box-sizing: border-box;
+        }
+
+        /* 1. ĐỊNH DẠNG KHU VỰC TIÊU ĐỀ */
+        .bv-tieu-de {
+            font-size: 28px;
+            font-weight: bold;
+            color: #046c04;           /* Màu xanh lá đậm Giáo xứ */
+            line-height: 1.4;
+            margin-bottom: 12px;
+            text-align: left;
+        }
+
+        /* Thanh thông tin ngày đăng, người viết */
+        .bv-thong-tin-phu {
+            font-size: 13px;
+            color: #777777;
+            border-bottom: 1px dashed #dddddd; /* Đường gạch đứt phân cách */
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            gap: 15px;
+        }
+
+        /* 2. ĐỊNH DẠNG RUỘT NỘI DUNG VĂN BẢN (Chuẩn như Microsoft Word) */
+        .bv-noi-dung-goc {
+            color: #222222;
+            font-size: 16px;          /* Cỡ chữ chuẩn quốc tế để đọc tin tức trên màn hình */
+        }
+
+        .bv-noi-dung-goc p {
+            text-align: justify;       /* CĂN ĐỀU 2 BÊN lề thẳng tắp */
+            line-height: 1.4;          /* GIÃN DÒNG thoáng đãng, dễ đọc */
+            margin-bottom: 10px;       /* Khoảng cách khi xuống dòng giữa các đoạn văn */
+            text-indent: 15px;         /* THỤT ĐẦU DÒNG tự động cho mỗi đoạn */
+        }
+
+        /* Định dạng các tiêu đề phụ 1., 2. bên trong bài viết */
+        .bv-noi-dung-goc h2 {
+            font-size: 20px;
+            color: #17720b;
+            margin: 30px 0 15px 0;
+            border-left: 0px solid #17720b; /* Vạch đứng màu xanh bên mép trái tiêu đề */
+            padding-left: 10px;
+        }
+
+        /* Định dạng hình ảnh minh họa chèn ở giữa bài viết */
+        .bv-noi-dung-goc .hop-chua-anh {
+            text-align: center;
+            margin: 25px 0;
+            text-indent: 0;            /* Hủy thụt đầu dòng riêng cho khối ảnh */
+        }
+
+        .bv-noi-dung-goc img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        /* Chữ chú thích nhỏ xíu nằm dưới tấm ảnh */
+        .bv-noi-dung-goc .chu-thich-anh {
+            font-size: 13px;
+            color: #555555;
+            font-style: italic;
+            margin-top: 6px;
+            display: block;
+        }
+
+        /* Nút quay lại trang tin tức */
+        .btn-quay-lai {
+            display: inline-block;
+            margin-top: 30px;
+            color: #17720b;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .btn-quay-lai:hover { text-decoration: underline; }
+
+        /* Tối ưu hiển thị co giãn trên màn hình điện thoại di động */
+        @media (max-width: 768px) {
+            .sh-khung-doc-bai-viet {
+                margin: 15px 10px;
+                padding: 25px 15px;
+            }
+            .bv-tieu-de { font-size: 22px; }
+            .bv-noi-dung-goc { font-size: 15px; }
+        }
+<!--------------------------------PHẦN TRANG TRÍ CHO LÒI CHÚA MỖI NGÀY------------------------------------>
+
+             /* CSS trang trí riêng cho khung đoạn trích Lời Chúa */
+        .khung-trich-dan-kinh-thanh {
+            background-color: #fffdf0; /* Màu vàng kem trang nghiêm như trang sách kinh */
+            border-left: 6px solid #e67e22; /* Vạch đứng màu cam tạo điểm nhấn bên trái */
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+        .khung-trich-dan-kinh-thanh p {
+            font-style: italic; /* Ép chữ in nghiêng */
+            text-indent: 0 !important; /* Hủy thụt đầu dòng riêng cho đoạn trích Kinh Thánh */
+            color: #333333;
+        }
+              .bv-nguon-kinh-thanh {
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            color: #e67e22;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+       <!--------------------------------PHẦN TRANG TRÍ CHO SUY NIỆM LỜI CHÚA------------------------------------>
+
+                /* CSS trang trí riêng cho khung tâm tình cầu nguyện dưới đáy */
+        .khung-tam-tinh-cau-nguyen {
+            background-color: #f0f7f3; /* Màu xanh lá cực nhạt tạo cảm giác bình an */
+            border: 1px solid #cce5d8;
+            border-radius: 6px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .khung-tam-tinh-cau-nguyen h3 {
+            color: #046c04;
+            margin-top: 0 !important;
+            margin-bottom: 10px;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        .khung-tam-tinh-cau-nguyen p {
+            font-style: italic;
+            text-indent: 0 !important;
+            margin-bottom: 0 !important;
+        }
+
+
+         /* === PHẦN CSS BỐ CỤC XẾP HÀNG NGANG CÁC HỘP TIN === */
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .tin-tuc-flex {
+            display: flex;         /* Kích hoạt xếp hàng ngang */
+            flex-wrap: wrap;       /* Tự động xuống dòng nếu thiếu chỗ */
+            gap: 20px;             /* Khoảng cách giữa các hộp box tin tức */
+            justify-content: flex-start; /* Căn các hộp từ bên trái qua */
+        }
+
+        /* Định dạng cho từng hộp Box Bài Viết */
+        .hop-tin {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            width: calc(33.333% - 14px); /* Chia đều 3 hộp trên 1 hàng (trừ đi khoảng cách gap) */
+            min-width: 280px; /* Không cho hộp co quá nhỏ trên màn hình bé */
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hop-tin img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover; /* Cắt ảnh vừa vặn không bị méo hình */
+        }
+
+        .hop-tin-noidung {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .hop-tin-noidung h3 {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .hop-tin-noidung h3 a {
+            text-decoration: none;
+            color: #2c3e50;
+        }
+
+        .hop-tin-noidung h3 a:hover {
+            color: #3498db;
+        }
+
+        .hop-tin-noidung p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin: 0 0 15px 0;
+        }
+
+        .xem-them-btn {
+            margin-top: auto; /* Đẩy nút xem thêm luôn dính ở đáy hộp */
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        <!---------------------------STYLE BAI VIET PHUNG VU LOI CHUA--------------------------->
+                body { background-color: #f4f7f6; }
+
+        .sh-khung-doc-bai-viet {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            box-sizing: border-box;
+        }
+
+        .hop-anh-chu-de { text-align: center; margin: 20px 0 30px 0; }
+        .hop-anh-chu-de img { max-width: 100%; height: auto; border-radius: 6px; }
+
+        .khung-tom-tat-loichua {
+            background-color: #fffdf0; 
+            border-left: 5px solid #e67e22;
+            padding: 20px;
+            margin-bottom: 35px;
+            border-radius: 4px;
+        }
+   
+        .khung-tom-tat-loichua p {
+            font-style: italic;
+            font-size: 20px;
+            color: #c0392b;
+            text-indent: 0 !important;
+            line-height: 1.6;
+            margin: 0;
+            text-align: left;
+        }
+
+        .tieu-de-muc-phung-vu {
+            font-size: 18px;
+            font-weight: bold;
+            color: #17720b;
+            margin: 35px 0 8px 0;
+            border-left: 4px solid #17720b;
+            padding-left: 12px;
+            text-transform: uppercase;
+        }
+
+        /* 👑 DÒNG CHỮ DẪN DẮT CHỮ NHỎ IN NGHIÊNG MỚI THEO Ý BẠN */
+        .bv-dong-dan-dat {
+            font-size: 16px;          /* Cỡ chữ nhỏ hơn chữ bài đọc chính (16px) */
+            font-style: italic;        /* Ép chữ luôn luôn in nghiêng */
+            color: #555555;            /* Màu xám đen nhạt nhã nhặn */
+            margin-bottom: 15px;       /* Tạo khoảng cách với phần ruột bài đọc ở dưới */
+            padding-left: 4px;         /* Căn lề nhẹ thẳng hàng */
+            display: block;
+        }
+
+        /* Ruột nội dung bài đọc chính (Chữ thẳng đứng thẳng hàng) */
+        .loi-kinh-chuan {
+            font-size: 16px;
+            color: #222222;
+            margin-bottom: 25px;
+        }
+        .loi-kinh-chuan p {
+            text-align: justify;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            text-indent: 0px;         /* Tự động thụt đầu dòng 30px như Word */
+        }
+<!------------------------------------KẾT THÚC STYLE CHO BÀI VIẾT ----------------------------->

@@ -10,9 +10,17 @@
 </head>
 <body>
 
-        <!---------------------------- KHOI: THANH MENU NGANG -------------------------->
+    <!--------------------------- LENH GOI STYLE GIAO DIEN ------------------------->
 
-    <nav class="navbar">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <!---------------------------- KHOI: THANH MENU NGANG -------------------------->
+
+        
+        <nav class="navbar navbar-pc">
         <ul>
             <li><a href="index.html" >⛪   Trang Chủ</a></li>
             <li><a href="gioithieu.html">Giới Thiệu</a></li>
@@ -20,20 +28,20 @@
             <li class="dropdown">
             <a href="cacgiaoho.html">Các Giáo Họ ▾</a>
             <ul class="dropdown-content">
-                    <li><a href="thanhgioan.html">Thánh Gioan</a></li>
-                    <li><a href="thanhmartino.html">Thánh Martinô</a></li>
-                    <li><a href="melentroi.html">Mẹ Lên Trời</a></li>
-                    <li><a href="thanhanre.html">Thánh Anrê</a></li>
-                    <li><a href="mevonhiem.html">Mẹ Vô Nhiễm</a></li>
-                    <li><a href="hoduyan.html">Họ Duy Ân</a></li>
+                    <li><a href="ghthanhgioan.html">Thánh Gioan</a></li>
+                    <li><a href="ghthanhmartino.html">Thánh Martinô</a></li>
+                    <li><a href="ghmelentroi.html">Mẹ Lên Trời</a></li>
+                    <li><a href="ghthanhanre.html">Thánh Anrê</a></li>
+                    <li><a href="ghmevonhiem.html">Mẹ Vô Nhiễm</a></li>
+                    <li><a href="ghhoduyan.html">Họ Duy Ân</a></li>
                     </ul>
                     </li>
 
             <li class="dropdown">
             <a href="loichua.html">Lời Chúa ▾</a>
             <ul class="dropdown-content">
-                    <li><a href="loichuamoingay.html">Lời Chúa Mỗi Ngày</a></li>
-                    <li><a href="suyniemloichua.html">Suy Niệm lời Chúa</a></li>
+                    <li><a href="lcloichuamoingay.html">Lời Chúa Mỗi Ngày</a></li>
+                    <li><a href="lcsuyniemloichua.html">Suy Niệm lời Chúa</a></li>
                     </ul>
                     </li>              
 
@@ -48,14 +56,37 @@
                     </li>
 
             <li><a href="lienhe.html">Liên Hệ</a></li>
+     </ul>
+      </nav>
+
+<!-- BẢN MENU THU GỌN DÀNH CHO ĐIỆN THOẠI MỚI -->
+    <nav class="navbar-mobile">
+    <a href="index.html">⛪ Trang Chủ</a>
+    <a href="loichua.html">📖 Lời Chúa</a>
+    <a href="tintuc.html">📖 Tin Tức</a>
+    <a href="lienhe.html">📞 Liên Hệ</a>
     </ul>
     </nav>
 
-  <!------------------------KHỐI BANNER ẢNH NÀY ------------------------------->
+   
 
-    <div class="banner-container">
-        <img src="../anh/banner.png" alt="Banner Giáo Xứ Hồng Ân">
-    </div>
+    <!------------------------KHOI ANH BANNER CHINH ------------------------------->
+
+    <div class="banner-pc">
+        <div class="banner-container">
+   
+    <img src="anh/banner.png" alt="Banner Máy Tính">
+   </div> 
+   </div>
+    <!-- BANNER ĐIỆN THOẠI MỚI (Dùng một tấm ảnh đứng hoặc ảnh cắt gọn riêng cho di động) -->
+ <div class="banner-mobile">
+    <img src="anh/banner-mobile.png" alt="Banner Điện Thoại">
+</div>
+    
+    <!-------------------------- gach duoi banner chinh -------------------------->
+     <div class="cum-gach-ngang-duoi-banner">
+    <h2 style="text-align: left; color: #d0d0d0; font-size: 18px;"></h2>
+</div>
     <!-- KHỐI TIÊU ĐỀ DANH MỤC CÓ ĐƯỜNG GẠCH DÀI -->
 <div class="cum-tieu-de-danh-muc">
     
@@ -72,20 +103,20 @@
 
             <!-- BAI VIET SO 1 -->
             <div class="hop-tin">
-                    <a href="../baivietgiaoxu/baiviet3.html">
-                    <img src="../anh/gioan.jpg" alt="Ảnh Lễ Các Thánh">
+                    <a href="baiviet3.html">
+                    <img src="https://giaoxuhongan.com/files/tin/385/jpg/ron-rang-dem-hoi-cho-trung-thu-tai-giao-xu-hong-an.jpg" alt="Ảnh Lễ Các Thánh">
                     </a>
                 <div class="hop-tin-noidung">
-                    <h3><a href="../baivietgiaoxu/baiviet3.html">Mừng Đại Lễ Các Thánh Tại Giáo Xứ</a></h3>
+                    <h3><a href="baiviet3.html">Mừng Đại Lễ Các Thánh Tại Giáo Xứ</a></h3>
                     <p>Thánh lễ đã diễn ra vô cùng trang nghiêm và sốt sắng với sự tham gia của đông đảo cộng đoàn dân chúa...</p>
-                    <a href="../baivietgiaoxu/baiviet3.html" class="xem-them-btn">Đọc bài viết →</a>
+                    <a href="baiviet3.html" class="xem-them-btn">Đọc bài viết →</a>
                 </div>
                 </div>
 
             <!-- BAI VIET SO 2 -->
             <div class="hop-tin">
                 <a href="tin-thieu-nhi.html">
-                    <img src="anh-thieu-nhi.jpg" alt="Ảnh Thiếu Nhi">
+                    <img src="https://giaoxuhongan.com/files/tin/384/jpg/giao-ho-duy-an-hoi-cho-trung-thu-day-niem-vui-cho-cac-em-thieu-nhi.jpg" alt="Ảnh Thiếu Nhi">
                 </a>
                 <div class="hop-tin-noidung">
                     <h3><a href="tin-thieu-nhi.html">Khai Giảng Năm Học Giáo Lý Mới</a></h3>
@@ -97,7 +128,7 @@
             <!-- BAI VIET SO 3 -->
             <div class="hop-tin">
                 <a href="tin-bac-ai.html">
-                    <img src="anh-bac-ai.jpg" alt="Ảnh Bác Ái">
+                    <img src="https://giaoxuhongan.com/files/tin/367/png/dem-trung-thu-anh-trang-yeu-thuong-danh-cho-cac-em-thieu-nhi-giao-ho-duy-an.png" alt="Ảnh Bác Ái">
                 </a>
                 <div class="hop-tin-noidung">
                     <h3><a href="tin-bac-ai.html">Chương Trình Bác Ái Trung Thu Cho Thiếu Nhi</a></h3>
@@ -109,7 +140,7 @@
                         <!-- BAI VIET SO 4 -->
             <div class="hop-tin">
                     <a href="tin-le-cac-thanh.html">
-                    <img src="anh-le-cac-thanh.jpg" alt="Ảnh Lễ Các Thánh">
+                    <img src="https://giaoxuhongan.com/files/tin/366/jpg/trung-thu-2026-niem-vui-tuoi-tho-trong-mai-nha-giao-xu-hong-an.jpg" alt="Ảnh Lễ Các Thánh">
                     </a>
                 <div class="hop-tin-noidung">
                     <h3><a href="tin-le-cac-thanh.html">Mừng Đại Lễ Các Thánh Tại Giáo Xứ</a></h3>
@@ -121,7 +152,7 @@
             <!-- BAI VIET SO 5 -->
             <div class="hop-tin">
                 <a href="tin-thieu-nhi.html">
-                    <img src="anh-thieu-nhi.jpg" alt="Ảnh Thiếu Nhi">
+                    <img src="https://giaoxuhongan.com/files/tin/326/jpg/giao-ho-duy-an-han-hoan-khai-giang-nam-hoc-giao-ly-nien-khoa-2026-2027.jpg" alt="Ảnh Thiếu Nhi">
                 </a>
                 <div class="hop-tin-noidung">
                     <h3><a href="tin-thieu-nhi.html">Khai Giảng Năm Học Giáo Lý Mới</a></h3>
@@ -133,7 +164,7 @@
             <!-- BAI VIET SO 6 -->
             <div class="hop-tin">
                 <a href="tin-bac-ai.html">
-                    <img src="anh-bac-ai.jpg" alt="Ảnh Bác Ái">
+                    <img src="https://giaoxuhongan.com/files/tin/325/jpg/giao-xu-hong-an-khai-giang-nam-hoc-giao-ly-moi-nien-khoa-2026-2027.jpg" alt="Ảnh Bác Ái">
                 </a>
                 <div class="hop-tin-noidung">
                     <h3><a href="tin-bac-ai.html">Chương Trình Bác Ái Trung Thu Cho Thiếu Nhi</a></h3>

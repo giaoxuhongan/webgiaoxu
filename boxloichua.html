@@ -165,15 +165,14 @@ body { background: #ffffff; padding: 15px; }
     margin-right: 12px; 
     overflow: hidden; 
     border-radius: 4px; 
-    border: 1px solid #d7e3dd;
+    border: 1px solid #000000;
     background: #ffffff; 
 }
  
 .img-thumb { 
     width: 100%; 
     height: 100%; 
-    object-fit: cover;
-    display: block; 
+    object-fit: cover; 
 } 
 
 .txt-wrap { overflow: hidden; } 
@@ -192,6 +191,68 @@ body { background: #ffffff; padding: 15px; }
     margin-top: 4px; 
     text-align: left; 
 } 
+
+/* =========================================================
+   TỰ ĐỘNG CHUYỂN ĐỔI GIAO DIỆN ĐIỆN THOẠI CHO HỘP LỜI CHÚA
+========================================================= */
+@media (max-width: 768px) {
+    /* 1. Xóa khoảng trống đệm lề mặc định của body */
+    body {
+        padding: 5px !important;
+    }
+
+    /* 2. Ép cấu trúc Flexbox chuyển từ hàng ngang thành hàng dọc */
+      .box-flex {
+        display: flex !important;
+        flex-direction: column !important;
+        
+        height: auto !important;         /* Hủy chiều cao cố định để không sinh cuộn dọc */
+        overflow: visible !important;    /* ➔ THÊM DÒNG NÀY: Cho phép nội dung hiển thị tự do, triệt tiêu thanh cuộn ngoài */
+    }
+
+    /* 3. Ép khung xem trước bên trái mở rộng 100% màn hình dọc */
+     .col-left {
+        width: 100% !important;
+        height: auto !important;         /* Cho phép tự co giãn theo nội dung chữ */
+        padding: 15px !important;
+        border-right: none !important;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* 4. Hạ bớt chiều cao vùng ảnh lớn cho cân đối với màn hình dọc */
+    .img-wrap {
+        height: 220px !important;
+    }
+
+    /* 5. Ép danh sách tin bài bên phải mở rộng 100% và khống chế vùng cuộn dọc */
+      .col-right {
+        width: 100% !important;
+        
+        /* Cài đặt không gian vuốt lướt tin tức vừa vặn ngón tay trên di động */
+        height: 250px !important;        /* Chiều cao của riêng vùng danh sách bài viết */
+        overflow-y: auto !important;     /* ➔ GIỮ NGUYÊN dòng này để làm thanh cuộn duy nhất */
+        
+        background: #ffffff !important;
+    }
+
+    /* Tối ưu các nút tab tiêu đề trên điện thoại cho khỏi tràn hàng */
+    .t-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+    }
+    .t-tabs {
+        width: 100% !important;
+        overflow-x: auto !important; /* Tự động mọc cuộn ngang nếu tab quá dài */
+        padding-bottom: 5px;
+    }
+    .t-btn {
+        font-size: 14px !important;
+        padding: 0 8px 5px 8px !important;
+        white-space: nowrap !important; /* Chống rớt chữ xuống dòng */
+    }
+}
+
 </style>
 </head>
 <body>
@@ -225,105 +286,124 @@ body { background: #ffffff; padding: 15px; }
 <script>
 // MẢNG DỮ LIỆU BÀI VIẾT (ĐOẠN XỬ LÝ CLICK CHUẨN XỊN)
 var DATA_1 = [
-    { title: "29-09-2026. Thứ Ba sau Chúa nhật 26 Thường niên. Năm A", 
-    img: "https://giaoxuhongan.com/files/assets/hinh_loi_chua/thien_than.jpg", 
-    url: "../loichuamoingay/loi_chua_thu_ba_tuan_26.html", 
+    { title: "04-10-2026. Chúa nhật 27 Thường niên. Năm A", 
+    img: "https://scontent.fsgn15-1.fna.fbcdn.net/v/t39.99422-6/833412187_1825127035606375_6979443072692057134_n.png?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s960x960&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=uzXGVCV15jEQ7kNvwGBIVzG&_nc_oc=AdobNPIVFUk0aBdLDrnCe7J6UgWQTLNi-2RTIfiF_Seiw26LJqcLBCel0W7PgRuCdoqbKGvm-jjyCih--TlnDBW3&_nc_zt=14&_nc_ht=scontent.fsgn15-1.fna&_nc_gid=DSBVwegy9H52tV_HQh7V9Q&_nc_ss=7b2a8&oh=00_AQMaLJxB6SnU7cylLuaLoget44t5iauvMAZha_4y6tuxfQ&oe=6AC5FC83", 
+    url: "04-10-loi_chua_chua_nhat_tuan_27.html", 
+    date: "04/10/2026" },
+
+{ title: "03-10-2026. Thứ Bảy sau Chúa nhật 26 Thường niên. Năm A", 
+    img: "https://scontent.fsgn15-1.fna.fbcdn.net/v/t39.30808-6/829340315_1098438829731724_4917290588179131930_n.jpg?stp=dst-jpg_tt6&cstp=mx1672x940&ctp=s960x960&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=kEsDsJPrq3oQ7kNvwHDWxlP&_nc_oc=AdrNXmC35xMqdZJ59k_MYUddXcEKkaBPZ6yMVJjCA6AMtF40u-FcEEEtcARsAnJBv1mUfRQwaK7c6ln6dr2ejAXV&_nc_zt=23&_nc_ht=scontent.fsgn15-1.fna&_nc_gid=K69EF15Idfsle_OLcXA3mg&_nc_ss=7b2a8&oh=00_AQNjd9kwem-QKkfaDklMfn3yi7EY5cJYr6phPxfw_d470w&oe=6AC4F152", 
+    url: "03-10-loi_chua_thu_bay_tuan_26.html", 
+    date: "03/10/2026" },
+
+{ title: "02-10-2026. Thứ Sáu sau Chúa nhật 26 Thường niên. Năm A", 
+    img: "https://scontent.fsgn15-1.fna.fbcdn.net/v/t39.30808-6/830459700_1097565823152358_5078133373326842645_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s960x960&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=YoZkyJMxeZoQ7kNvwHcj4JA&_nc_oc=Ado6ojHTZLpQ5BvhQ9rdQKeFpahJHG5SJXzo1TXdSO3hG0BuSwQlqLGLsyyCzs8M1VQDy770XeHMvHLehGOf4Af_&_nc_zt=23&_nc_ht=scontent.fsgn15-1.fna&_nc_gid=dRSJUpw0tzcpl9d_f4zs3Q&_nc_ss=7b2a8&oh=00_AQMeIP5e12Zkik9uiwopupbxCKF63EajQsZTrvJekheYVw&oe=6AC4FB36", 
+
+    url: "02-10-loi_chua_thu_sau_tuan_26.html", 
+    date: "02/10/2026" },
+
+    { title: "01-10-2026. Thứ Năm sau Chúa nhật 26 Thường niên. Năm A", 
+    img: "https://scontent.fsgn15-1.fna.fbcdn.net/v/t39.30808-6/829806815_1096195553289385_8381293564437453020_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1152&ctp=s960x960&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=A3tQCL8KFD8Q7kNvwGB7XJ8&_nc_oc=Ado2ePZBuvcqj7Olw9DdZD5NoLneY3iKcef_haNjvyFSgZ-n5wg0EmEpWBPf-5iQgU_8HmH7mNHAkJgqPc8341RG&_nc_zt=23&_nc_ht=scontent.fsgn15-1.fna&_nc_gid=wRLjd_CUTbPLpPhMUftSMQ&_nc_ss=7b2a8&oh=00_AQP3OcafDdr_SY56fGJeP-qHLSrQRSExfylf-IvUPwBkyw&oe=6AC4D79B", 
+
+    url: "01-10-loi_chua_thu_nam_tuan_26.html", 
+    date: "01/10/2026" },
+
+ { title: "30-09-2026. Thứ Tư sau Chúa nhật 26 Thường niên. Năm A", 
+    img: "https://scontent.fsgn15-1.fna.fbcdn.net/v/t39.30808-6/830116692_1095401576702116_6993339120024218248_n.jpg?stp=dst-jpg_tt6&cstp=mx1672x940&ctp=s960x960&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=ZXpVbUPmg40Q7kNvwHX9InB&_nc_oc=Ado1QEMN9BUsG2TNxUonZlnrenGfAbopVlauGt5qIRhYjBvtGJ3X_rmXq06j3iciRNPguDYkAorsm9HxSobCuhc_&_nc_zt=23&_nc_ht=scontent.fsgn15-1.fna&_nc_gid=wRLjd_CUTbPLpPhMUftSMQ&_nc_ss=7b2a8&oh=00_AQObrcokvMzWoq4DVhzZ8BKIqXjY4TU7ixekjKeWm1-Tag&oe=6AC4E882", 
+
+    url: "30-09-loi_chua_thu_tu_tuan_26.html", 
+    date: "30/09/2026" },
+
+ { title: "29-09-2026. Thứ Ba sau Chúa nhật 26 Thường niên. Năm A", 
+    img: "https://scontent.fsgn15-1.fna.fbcdn.net/v/t39.30808-6/826509822_1094402340135373_4356187781123279741_n.jpg?stp=dst-jpg_tt6&cstp=mx1376x768&ctp=s960x960&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=ejGL2h7pXfEQ7kNvwGayPM9&_nc_oc=Adq_rWMagrKmNEtmTcT23VHb9VtgB1Vi3cohWyVPcJOtkKj1FFylmN6QIn35Aadq8r_yQlEiV1f_4lNfXP9447d3&_nc_zt=23&_nc_ht=scontent.fsgn15-1.fna&_nc_gid=e0dwJx-8I9JZdgNGQVV6Lg&_nc_ss=7b2a8&oh=00_AQNw7yT6aypOnISFqPtQoATnBcrYf9Dc2eJNwGPvVyySvg&oe=6AC50303", 
+    url: "29-09-loi_chua_thu_ba_tuan_26.html", 
     date: "29/09/2026" },
 
-    { title: "Thánh lễ Tạ ơn Tân linh mục - tại Giáo xứ Hồng Ân - 14/8/2026", 
-    img: "https://ibb.co", 
-    url: "https://giaoxuhongan.com", 
-    date: "30/08/2026" },
+ { title: "28-09-2026. Thứ Hai sau Chúa nhật 26 Thường niên. Năm A", 
+    img: "https://scontent.fsgn15-1.fna.fbcdn.net/v/t39.30808-6/825784299_1093463170229290_8916422010726566852_n.jpg?stp=dst-jpg_tt6&cstp=mx1672x940&ctp=s960x960&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=_EwfPzVRTh0Q7kNvwFcXd7K&_nc_oc=AdpDTye5tavIZq7Tl2Xb-rRrLQA_HLRFBELDgwlRAGeHENDI7rz9ue4DMzroT3eifLDVAxEEZvfizkqbE-dyvULf&_nc_zt=23&_nc_ht=scontent.fsgn15-1.fna&_nc_gid=hTxqs_ZAKkOTQyrXBa6ISg&_nc_ss=7b2a8&oh=00_AQPYt-sikeVaPKfBca3e-0-QYOZe6-FBidUf_AphnGkTJA&oe=6AC4ED2E", 
+    url: "28-09-loi_chua_thu_hai_tuan_26.html", 
+    date: "28/09/2026" },
 
-    { title: "Thánh Lễ Tạ Ơn Của 2 Tân Linh Mục tại Gx. Gia Vinh", 
-    img: "https://ibb.co", 
-    url: "https://giaoxuhongan.com", 
-    date: "30/08/2026" },
+ { title: "27-09-2026. Chúa nhật 26 Thường niên. Năm A", 
+    img: "https://scontent.fsgn15-1.fna.fbcdn.net/v/t39.30808-6/825273564_1092175540358053_6601353461572707316_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s960x960&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=NBeQJm1EI6YQ7kNvwFyBzMl&_nc_oc=AdqRAsK-tGo4prtey88nbQLQjxJmQrV0xXAivMrUodyA1fhbWVbcjwjbUhO-BhyusQCF2i14a9Ot6YjINjMgb1v0&_nc_zt=23&_nc_ht=scontent.fsgn15-1.fna&_nc_gid=uJa_Eutuj8ew5FFnIYqNng&_nc_ss=7b2a8&oh=00_AQNUEvHHmF6VlEkTs7wSucaidjG_LCtnco5rrQl0aCQQeA&oe=6AC50B1B", 
+    url: "27-09-loi_chua_chua_nhat_tuan_26.html", 
+    date: "27/09/2026" },
 
-    { title: "Thánh Lễ Truyền Chức Linh Mục Giáo Phận Xuân Lộc Năm 2026", 
-    img: "https://ibb.co", 
-    url: "https://giaoxuhongan.com", 
-    date: "10/09/2026" },
+ {title: "26-09-2026. Thứ Bảy sau Chúa nhật 25 Thường niên. Năm A", 
+    img: "https://scontent.fsgn15-1.fna.fbcdn.net/v/t39.99422-6/826154513_1604319214520139_4047668045699608940_n.png?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s960x960&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=vk6cwwuMwvEQ7kNvwG23ceZ&_nc_oc=AdqtMfcOCdNTG3c65J7ecUlzSzv6hYhBZibb9YBcWs6sqkfKEymeezw6sizK9-OzdHcGCnHfALDEtr3D40lAGZkN&_nc_zt=14&_nc_ht=scontent.fsgn15-1.fna&_nc_gid=Jd3cFkXUDCmeIBPGSD6UDA&_nc_ss=7b2a8&oh=00_AQPWvhKuCj29lS5tf0VGGSFSlambcUZ34MlLBVJDz_c_fg&oe=6AC5143A", 
+    url: "26-09-loi_chua_thu_bay_tuan_25.html", 
+    date: "26/09/2026" },
 
-    { title: "Thánh lễ Tạ ơn Tân linh mục - tại Giáo xứ Hồng Ân - 14/8/2026", 
-    img: "https://ibb.co", 
-    url: "https://giaoxuhongan.com", 
-    date: "30/08/2026" },
+    {title: "25-09-2026. Thứ Sáu sau Chúa nhật 25 Thường niên. Năm A", 
+    img: "https://scontent.fsgn15-1.fna.fbcdn.net/v/t39.30808-6/820114545_1090199213889019_1757447028863503989_n.jpg?stp=dst-jpg_tt6&cstp=mx1286x723&ctp=s960x960&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=PtJSiR270rgQ7kNvwHTatpi&_nc_oc=AdqbgLn-jkmmsyGuNsdR-_WAb7zD4uJEh7gYmlNux35QMxkKkjgO65CEc64tuMXBhbLHT54gk2-JiG8E1mwFupw7&_nc_zt=23&_nc_ht=scontent.fsgn15-1.fna&_nc_gid=Q7iRupfr36B5oxUUDIC2jw&_nc_ss=7b2a8&oh=00_AQP-7ivaHAwst2nE3u-DtbxehRoH0GR3KE7k574VUIwY9A&oe=6AC50464", 
+    url: "25-09-loi_chua_thu_sau_tuan_25.html", 
+    date: "25/09/2026" },
 
-    { title: "Thánh Lễ Tạ Ơn Của 2 Tân Linh Mục tại Gx. Gia Vinh", 
-    img: "https://ibb.co", 
-    url: "https://giaoxuhongan.com", 
-    date: "30/08/2026" },
-    { title: "Thánh Lễ Truyền Chức Linh Mục Giáo Phận Xuân Lộc Năm 2026", 
-    img: "https://ibb.co", 
-    url: "https://giaoxuhongan.com", 
-    date: "10/09/2026" },
+    {title: "24-09-2026. Thứ Năm sau Chúa nhật 25 Thường niên. Năm A", 
+    img: "https://scontent.fsgn15-1.fna.fbcdn.net/v/t39.30808-6/819742715_1089388033970137_973288847610488685_n.jpg?stp=dst-jpg_tt6&cstp=mx1500x844&ctp=s960x960&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=kmY1pMkCJEkQ7kNvwEoVWAu&_nc_oc=AdoCUP9KMIh_asOpPedU6OsRk50RNnMiB8T0P_psAbCQewFOnzOq_ShIGk2fhdYdEYd-doNCkgWCmOwQqdadI45x&_nc_zt=23&_nc_ht=scontent.fsgn15-1.fna&_nc_gid=Q7iRupfr36B5oxUUDIC2jw&_nc_ss=7b2a8&oh=00_AQOiG3g8AO49GbVjjSIl29WuF-w2QSJSezJUV4Qhw_-RhA&oe=6AC51152", 
+    url: "24-09-loi_chua_thu_nam_tuan_25.html", 
+    date: "24/09/2026" },
 
-    { title: "Thánh lễ Tạ ơn Tân linh mục - tại Giáo xứ Hồng Ân - 14/8/2026", 
-    img: "https://ibb.co", 
-    url: "https://giaoxuhongan.com", 
-    date: "30/08/2026" },
-
-    { title: "Thánh Lễ Tạ Ơn Của 2 Tân Linh Mục tại Gx. Gia Vinh", 
-    img: "https://ibb.co", 
-    url: "https://giaoxuhongan.com", 
-    date: "30/08/2026" }
+    {title: "23-09-2026. Thứ Tư sau Chúa nhật 25 Thường niên. Năm A", 
+    img: "https://scontent.fsgn15-1.fna.fbcdn.net/v/t39.30808-6/819194211_1088301390745468_3276755883807534721_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s960x960&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Xm6DffN8gUoQ7kNvwGK-G_C&_nc_oc=AdpTbMMVJENRhEmttnaNCIiEDpQ669wbQNV_8noLjmApMbU5Xcpo1tL0YedLA_qbSvqQ6MFYRe2MTpHZL-i3gIMI&_nc_zt=23&_nc_ht=scontent.fsgn15-1.fna&_nc_gid=Q7iRupfr36B5oxUUDIC2jw&_nc_ss=7b2a8&oh=00_AQOwa5Z-4NMkUWWqE19dYAYPDZjCSFbXFD3HR1EDT3SQPw&oe=6AC51797", 
+    url: "23-09-loi_chua_thu_tu_tuan_25.html", 
+    date: "23/09/2026" },
 ]; 
 var DATA_2 = [
-    { title: "Suy Niệm 14 Chặng Đàng Thánh Giá | Năm Thánh 2025", 
-    img: "https://ibb.co", 
+    { title: "Suy niệm Thứ Bảy 03-10-2026 tuần 26 thường niên", 
+    img: "https://giaoxuhongan.com/files/assets/hinh_suy_niem/suy_niem_loi_chua_thu_7.png", 
     url: "https://giaoxuhongan.com", 
-    date: "23/04/2025" },
+    date: "03/10/2026" },
 
-    { title: "Giáo xứ Hồng Ân: 14 chặng đàng Thánh giá - 07/04/2023",
-    img: "https://ibb.co", 
+    { title: "Suy niệm Thứ Sáu 02-10-2026 tuần 26 thường niên", 
+    img: "https://giaoxuhongan.com/files/tin/379/jpg/suy-niem-thu-sau-02-10-2026-tuan-26-thuong-nien.jpg", 
     url: "https://giaoxuhongan.com", 
-    date: "07/04/2023" },
+    date: "02/10/2026" },
 
-    { title: "Thánh Lễ Truyền Chức Linh Mục Giáo Phận Xuân Lộc Năm 2026", 
-    img: "https://ibb.co", 
+    { title: "Suy niệm Thứ Năm 01-10-2026 tuần 26 thường niên", 
+    img: "https://giaoxuhongan.com/files/tin/378/png/suy-niem-thu-nam-01-10-2026-tuan-26-thuong-nien.png", 
     url: "https://giaoxuhongan.com", 
-    date: "10/09/2026" },
+    date: "01/10/2026" },
 
-    { title: "Thánh lễ Tạ ơn Tân linh mục - tại Giáo xứ Hồng Ân - 14/8/2026", 
-    img: "https://ibb.co", 
-    url: "https://giaoxuhongan.com",
-     date: "30/08/2026" },
-
-    { title: "Thánh Lễ Tạ Ơn Của 2 Tân Linh Mục tại Gx. Gia Vinh", 
-    img: "https://ibb.co", 
+    { title: "Suy niệm Thứ Tư 30-09-2025 tuần 26 thường niên", 
+    img: "https://giaoxuhongan.com/files/tin/377/png/suy-niem-thu-tu-30-09-2026-tuan-26-thuong-nien.png", 
     url: "https://giaoxuhongan.com", 
-    date: "30/08/2026" },
+    date: "30/09/2026" },
 
-    { title: "Thánh Lễ Truyền Chức Linh Mục Giáo Phận Xuân Lộc Năm 2026", 
-    img: "https://ibb.co", 
+    { title: "Suy niệm Thứ Ba 29-09-2026 tuần 26 thường niên", 
+    img: "https://giaoxuhongan.com/files/tin/376/jpg/suy-niem-thu-ba-29-09-2026-tuan-26-thuong-nien.jpg", 
     url: "https://giaoxuhongan.com", 
-    date: "10/09/2026" },
+    date: "29/09/2026" },
 
-    { title: "Thánh lễ Tạ ơn Tân linh mục - tại Giáo xứ Hồng Ân - 14/8/2026", 
-    img: "https://ibb.co", 
+    { title: "Suy niệm Thứ Hai 28-09-2026 tuần 26thường niên", 
+    img: "https://giaoxuhongan.com/files/tin/375/png/suy-niem-thu-hai-28-09-2026-tuan-26-thuong-nien.png", 
     url: "https://giaoxuhongan.com", 
-    date: "30/08/2026" },
+    date: "28/09/2026" },
 
-    { title: "Thánh Lễ Tạ Ơn Của 2 Tân Linh Mục tại Gx. Gia Vinh", 
-    img: "https://ibb.co", 
+    { title: "Suy niệm Chúa Nhật 27-09-2026 tuần 26 thường niên", 
+    img: "https://giaoxuhongan.com/files/tin/349/png/suy-niem-chua-nhat-27-09-2026-tuan-26-thuong-nien.png", 
     url: "https://giaoxuhongan.com", 
-    date: "30/08/2026" },
+    date: "27/09/2026" },
 
-    { title: "Thánh Lễ Truyền Chức Linh Mục Giáo Phận Xuân Lộc Năm 2026", 
-    img: "https://ibb.co", 
+    { title: "Suy niệm Thứ Bảy 26-09-2026 tuần 25 thường niên", 
+    img: "https://giaoxuhongan.com/files/tin/348/jpg/suy-niem-thu-bay-26-09-2026-tuan-25-thuong-nien.jpg", 
     url: "https://giaoxuhongan.com", 
-    date: "10/09/2026" },
+    date: "26/09/2026" },
 
-    { title: "Thánh lễ Tạ ơn Tân linh mục - tại Giáo xứ Hồng Ân - 14/8/2026", 
-    img: "https://ibb.co", 
+    { title: "Suy niệm Thứ Sáu 25-09-2026 tuần 25 thường niên", 
+    img: "https://giaoxuhongan.com/files/tin/348/jpg/suy-niem-thu-bay-26-09-2026-tuan-25-thuong-nien.jpg", 
     url: "https://giaoxuhongan.com", 
-    date: "30/08/2026" },
+    date: "25/09/2026" },
 
-    { title: "Thánh Lễ Tạ Ơn Của 2 Tân Linh Mục tại Gx. Gia Vinh", 
-    img: "https://ibb.co", 
+    { title: "Suy niệm Thứ Năm 24-09-2026 tuần 25 thường niên", 
+    img: "https://giaoxuhongan.com/files/tin/348/jpg/suy-niem-thu-bay-26-09-2026-tuan-25-thuong-nien.jpg", 
     url: "https://giaoxuhongan.com", 
-    date: "30/08/2026" }
+    date: "24/09/2026" },
+
+    { title: "Suy niệm Thứ Tư 23-09-2026 tuần 25 thường niên", 
+    img: "https://giaoxuhongan.com/files/tin/348/jpg/suy-niem-thu-bay-26-09-2026-tuan-25-thuong-nien.jpg", 
+    url: "https://giaoxuhongan.com", 
+    date: "23/09/2026" },
 ]; 
 
 
@@ -407,4 +487,3 @@ function selectTab(tabId, data) {
 </script>
 </body>
 </html>
-

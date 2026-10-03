@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Tin Tức</title>
+    <title>Giáo Họ Mẹ Lên Trời</title>
     <!=========LENH GOI STYLE======================>
 
     <link rel="stylesheet" href="style.css">
@@ -81,68 +81,44 @@
     <h2 style="text-align: left; color: #d0d0d0; font-size: 18px;"></h2>
 </div>
 
-<!=========================NOI DUNG===============================================>
-
-<!---------------------LENH GOI 3 BOX HANG NGANG ------------------------->
-
-
-<div class="vung-chua-3-box" style="max-width: 1200px; margin: 30px auto; padding: 0 15px; display: flex; gap: 20px;">
-
-    <!-- LENH GOI BOX 1 -->
-    <iframe src="boxtintuc.html" 
-     style="flex: 75; 
-     height: 520px; 
-     border: none; 
-     overflow: hidden;"></iframe>
-
-
-
-
-    <!-- LENH GOI BOX 3 -->
-    <iframe src="menu1-cot-phai.html" 
-     style="flex: 26; 
-     height: 522px; 
-     border: none; 
-     overflow: hidden;"></iframe>
+    <!-- KHỐI TIÊU ĐỀ DANH MỤC CÓ ĐƯỜNG GẠCH DÀI -->
+<div class="cum-tieu-de-danh-muc">
+    
+    <!-- Bạn có thể chỉnh căn lề (left, center, right) và màu sắc ngay tại dòng h2 này -->
+    <h2 style="text-align: left; color: #0568ae; font-size: 18px;">GIÁO HỌ MẸ LÊN TRỜI</h2>
 
 </div>
-</div>
 
-<!---------------------LENH GOI 3 BOX HANG NGANG ------------------------->
-
-
-<div class="vung-chua-3-box" style="max-width: 1200px; margin: 30px auto; padding: 0 15px; display: flex; gap: 20px;">
-
-    <!-- LENH GOI BOX 1 -->
-    <iframe src="boxgiaohoivietnam.html" 
-     style="flex: 37; 
-     height: 760px; 
-     border: none; 
-     overflow: hidden;"></iframe>
+<!----------------------------------------------NOI DUNG-------------------------------------------->
 
 
-    <!-- LENH GOI BOX 2 -->
-    <iframe src="boxgiaohoitoancau.html" 
-     style="flex: 37; 
-     height: 760px; 
-     border: none; 
-     overflow: hidden;"></iframe>
+    <!-- KHUNG BỌC FLEXBOX GIÚP XẾP HÀNG NGANG MỚI (RỘNG ĐÚNG 1200PX) -->
+    <div style="max-width: 1200px; margin: 20px auto; padding: 0 15px; display: flex; gap: 25px; flex-wrap: wrap;">
 
+        <!-- 1. BÊN TRÁI: KHỐI CHỨA ẢNH ĐẠI DIỆN (CHIẾM 40% ĐỘ RỘNG) -->
+        <div style="flex: 35; min-width: 280px; text-align: center;">
+            <!-- Lưu ý: Tôi giữ nguyên đường dẫn src="../anh/gioan.jpg" chính xác của bạn -->
+            <img src="anh/melentroi.jpg" alt="Ảnh minh họa Giáo họ" style="width: 100%; max-width: 100%; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); object-fit: cover;">
+        </div>
 
-    <!-- LENH GOI BOX 3 -->
-    <iframe src="menu2-cot-phai.html" 
-     style="flex: 26; 
-     height: 760px; 
-     border: none; 
-     overflow: hidden;"></iframe>
+        <!-- 2. BÊN PHẢI: KHỐI CHỨA BOX DANH SÁCH TÊN (CHIẾM 60% ĐỘ RỘNG) -->
+        <div style="flex: 60; min-width: 550px;">
+            <!-- Giữ nguyên iframe gọi file 1hdagioan.html của bạn -->
+            <iframe src="abdhmlt.html" style="width: 100%; height: 288px; border: none; overflow: hidden;"></iframe>
+        </div>
+  
+        </div>
 
-</div>
-</div>
+<!---------------------------BÀI VIẾT DƯỚI CÙNG----------------------------->
 
-
-
+    <div class="container" style="max-width: 1200px; width: 100%;">
+  
+        </div>
+        </div>
 <!-------------------------- THÀNH PHẦN MỚI: CHÂN TRANG 3 CỘT CHUYÊN NGHIỆP ------------------------------>
+
     <footer>
+
         <div class="footer-flex">
             
             <!-- CỘT 1: THÔNG TIN TỔNG QUAN -->
@@ -188,6 +164,7 @@
             <p>© 2026 Giáo Xứ Hồng Ân - Được thiết kế bởi Ban Truyền Thông Giáo Xứ</p>
         </div>
     </footer>
+
 
 </body>
 </html>

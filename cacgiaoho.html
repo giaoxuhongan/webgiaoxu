@@ -12,7 +12,8 @@
 
     <!---------------------------- KHOI: THANH MENU NGANG -------------------------->
 
-    <nav class="navbar">
+        
+        <nav class="navbar navbar-pc">
         <ul>
             <li><a href="index.html" >⛪   Trang Chủ</a></li>
             <li><a href="gioithieu.html">Giới Thiệu</a></li>
@@ -20,20 +21,20 @@
             <li class="dropdown">
             <a href="cacgiaoho.html">Các Giáo Họ ▾</a>
             <ul class="dropdown-content">
-                    <li><a href="thanhgioan.html">Thánh Gioan</a></li>
-                    <li><a href="thanhmartino.html">Thánh Martinô</a></li>
-                    <li><a href="melentroi.html">Mẹ Lên Trời</a></li>
-                    <li><a href="thanhanre.html">Thánh Anrê</a></li>
-                    <li><a href="mevonhiem.html">Mẹ Vô Nhiễm</a></li>
-                    <li><a href="hoduyan.html">Họ Duy Ân</a></li>
+                    <li><a href="ghthanhgioan.html">Thánh Gioan</a></li>
+                    <li><a href="ghthanhmartino.html">Thánh Martinô</a></li>
+                    <li><a href="ghmelentroi.html">Mẹ Lên Trời</a></li>
+                    <li><a href="ghthanhanre.html">Thánh Anrê</a></li>
+                    <li><a href="ghmevonhiem.html">Mẹ Vô Nhiễm</a></li>
+                    <li><a href="ghhoduyan.html">Họ Duy Ân</a></li>
                     </ul>
                     </li>
 
             <li class="dropdown">
             <a href="loichua.html">Lời Chúa ▾</a>
             <ul class="dropdown-content">
-                    <li><a href="loichuamoingay.html">Lời Chúa Mỗi Ngày</a></li>
-                    <li><a href="suyniemloichua.html">Suy Niệm lời Chúa</a></li>
+                    <li><a href="lcloichuamoingay.html">Lời Chúa Mỗi Ngày</a></li>
+                    <li><a href="lcsuyniemloichua.html">Suy Niệm lời Chúa</a></li>
                     </ul>
                     </li>              
 
@@ -48,18 +49,38 @@
                     </li>
 
             <li><a href="lienhe.html">Liên Hệ</a></li>
+     </ul>
+      </nav>
+
+<!-- BẢN MENU THU GỌN DÀNH CHO ĐIỆN THOẠI MỚI -->
+    <nav class="navbar-mobile">
+    <a href="index.html">⛪ Trang Chủ</a>
+    <a href="loichua.html">📖 Lời Chúa</a>
+    <a href="tintuc.html">📖 Tin Tức</a>
+    <a href="lienhe.html">📞 Liên Hệ</a>
     </ul>
     </nav>
 
-    <!------------------------KHỐI BANNER ẢNH NÀY ------------------------------->
+   
 
-    <div class="banner-container">
-        <img src="anh/banner.png" alt="Banner Giáo Xứ Hồng Ân">
-    </div>
- <!-------------------------- gach duoi banner chinh -------------------------->
-    <div class="cum-gach-ngang-duoi-banner">
+    <!------------------------KHOI ANH BANNER CHINH ------------------------------->
+
+    <div class="banner-pc">
+        <div class="banner-container">
+   
+    <img src="anh/banner.png" alt="Banner Máy Tính">
+   </div> 
+   </div>
+    <!-- BANNER ĐIỆN THOẠI MỚI (Dùng một tấm ảnh đứng hoặc ảnh cắt gọn riêng cho di động) -->
+ <div class="banner-mobile">
+    <img src="anh/banner-mobile.png" alt="Banner Điện Thoại">
+</div>
+    
+    <!-------------------------- gach duoi banner chinh -------------------------->
+     <div class="cum-gach-ngang-duoi-banner">
     <h2 style="text-align: left; color: #d0d0d0; font-size: 18px;"></h2>
-    </div>
+</div>
+
 
     <!-- KHỐI TIÊU ĐỀ DANH MỤC CÓ ĐƯỜNG GẠCH DÀI -->
 <div class="cum-tieu-de-danh-muc">
@@ -69,13 +90,85 @@
 
 </div>
 
-<!=========================NOI DUNG===============================================>
+<!-------------------------------------NOI DUNG------------------------------------------------->
+<!-- VÙNG CHỨA CÁC BÀI VIẾT XẾP HÀNG NGANG -->
 
-    <div class="container" style="max-width: 1100px; width: 100%;">
-        <h2>Những gì tôi cung cấp</h2>
-        <p>Đây là trang dịch vụ. Bạn có thể liệt kê các dịch vụ của mình ở đây, ví dụ như: Thiết kế website, Lập trình ứng dụng, hoặc Tư vấn công nghệ.</p>
-    </div>
+        <div class="wrapper">  
+        <div class="tin-tuc-flex">
 
+            <!-- BAI VIET SO 1 -->
+            <div class="hop-tin">
+                    <a href="ghthanhgioan.html">
+                    <img src="anh/gioan.jpg" alt="Ảnh Lễ Các Thánh">
+                    </a>
+                <div class="hop-tin-noidung">
+                    <h3><a href="ghthanhgioan.html">Giáo Họ Thánh Gioan</a></h3>
+                    <p>Số hộ: 63 - Số giáo dân: 303</p>
+                    <a href="ghthanhgioan.html" class="xem-them-btn">Đọc bài viết →</a>
+                </div>
+                </div>
+
+            <!-- BAI VIET SO 2 -->
+            <div class="hop-tin">
+                <a href="ghthanhmartino.htm">
+                    <img src="anh/martino.jpg" alt="Ảnh Thiếu Nhi">
+                </a>
+                <div class="hop-tin-noidung">
+                    <h3><a href="ghthanhmartino.html">Giáo Họ Thánh Martinô</a></h3>
+                    <p>Số hộ: 78 - Số giáo dân: 373</p>
+                    <a href="ghthanhmartino.htm" class="xem-them-btn">Đọc bài viết →</a>
+                    </div>
+                    </div>
+
+            <!-- BAI VIET SO 3 -->
+            <div class="hop-tin">
+                <a href="ghmelentroi.html">
+                    <img src="anh/melentroi.jpg" alt="Ảnh Bác Ái">
+                </a>
+                <div class="hop-tin-noidung">
+                    <h3><a href="ghmelentroi.html">Giáo Họ Mẹ Lên Trời</a></h3>
+                    <p>Số hộ: 100 - Số giáo dân: 499</p>
+                    <a href="ghmelentroi.html" class="xem-them-btn">Đọc bài viết →</a>
+                    </div>
+                    </div>
+
+                        <!-- BAI VIET SO 4 -->
+            <div class="hop-tin">
+                    <a href="ghthanhanre.html">
+                    <img src="anh/anre.jpg" alt="Ảnh Lễ Các Thánh">
+                    </a>
+                <div class="hop-tin-noidung">
+                    <h3><a href="ghthanhanre.html">Giáo Họ Thánh Anrê</a></h3>
+                    <p>Số hộ: 83 - Số giáo dân: 395</p>
+                    <a href="ghthanhanre.html" class="xem-them-btn">Đọc bài viết →</a>
+                </div>
+                </div>
+
+            <!-- BAI VIET SO 5 -->
+            <div class="hop-tin">
+                <a href="ghmevonhiem.html">
+                    <img src="anh/mevonhiem.jpg" alt="Ảnh Thiếu Nhi">
+                </a>
+                <div class="hop-tin-noidung">
+                    <h3><a href="ghmevonhiem.html">Giáo Họ Mẹ Vô Nhiễm</a></h3>
+                    <p>Số hộ: 278 - Số giáo dân: 1277</p>
+                    <a href="ghmevonhiem.html" class="xem-them-btn">Đọc bài viết →</a>
+                    </div>
+                    </div>
+
+            <!-- BAI VIET SO 6 -->
+            <div class="hop-tin">
+                <a href="ghhoduyan.html">
+                    <img src="anh/duyan.jpg" alt="Ảnh Bác Ái">
+                </a>
+                <div class="hop-tin-noidung">
+                    <h3><a href="ghhoduyan.html">Giáo Họ Duy Ân</a></h3>
+                    <p>Số hộ: (Đang cập nhật!) - Số giáo dân: (Đang cập nhật!)</p>
+                    <a href="ghhoduyan.html" class="xem-them-btn">Đọc bài viết →</a>
+                    </div>
+                    </div>
+</div>
+</div>
 <!-------------------------- THÀNH PHẦN MỚI: CHÂN TRANG 3 CỘT CHUYÊN NGHIỆP ------------------------------>
     <footer>
         <div class="footer-flex">

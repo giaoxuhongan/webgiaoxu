@@ -175,4 +175,34 @@
     border-bottom: 2px solid currentColor; 
 }
 
+/* =========================================================
+   TỰ ĐỘNG CHUYỂN ĐỔI GIAO DIỆN ĐIỆN THOẠI (DƯỚI 768_PIXEL)
+========================================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Biến các hàng ngang bọc 3 box thành hàng dọc để lướt vuốt */
+    .vung-chua-3-box,
+    .trang-chu-container,
+    .box-flex {
+        display: flex !important;
+        flex-direction: column !important; /* Ép xếp dọc từ trên xuống */
+        height: auto !important;           /* Hủy chiều cao cố định để không bị vỡ khung */
+        gap: 15px !important;
+    }
+
+    /* 2. Ép các ô iframe mở rộng hết 100% chiều ngang màn hình điện thoại */
+    iframe {
+        width: 100% !important;
+        height: 450px !important; /* Đặt chiều cao vừa vặn cho 1 màn hình dọc di động */
+        flex: none !important;
+    }
+
+    /* 3. Tối ưu lại kích thước chữ Menu trên điện thoại cho khỏi dính nhau */
+    .navbar a {
+        padding: 10px 8px !important;
+        font-size: 14px !important;
+    }
+}
+
+
 
